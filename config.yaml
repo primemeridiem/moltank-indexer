@@ -1,9 +1,9 @@
 name: molttank-indexer
 description: MoltTank launchpad indexer for Monad
 networks:
-  - id: 143 # Monad Mainnet (Anvil fork)
+  - id: 10143 # Monad Testnet
     rpc_config:
-      url: http://127.0.0.1:8545
+      url: https://testnet-rpc.monad.xyz
     start_block: 0
     contracts:
       - name: MoltTank
