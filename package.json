@@ -10,7 +10,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "envio": "^2.9.0",
+    "envio": "^2.32.3",
     "generated": "link:./generated"
   },
   "devDependencies": {
