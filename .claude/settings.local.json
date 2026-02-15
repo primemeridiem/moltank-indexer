@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.monad.xyz)",
+      "Bash(pnpm --version:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(pnpx envio codegen:*)",
+      "Bash(npx tsc:*)",
+      "Bash(docker info:*)",
+      "WebFetch(domain:docs.envio.dev)",
+      "Bash(pnpx envio dev:*)",
+      "Bash(pnpx envio stop:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(pnpm stop:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(lsof:*)",
+      "Bash(git init:*)",
+      "Bash(git -C /Users/prompt/Documents/hackaton/moltdao/moltank-indexer status -s)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: MoltTank Envio indexer\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}

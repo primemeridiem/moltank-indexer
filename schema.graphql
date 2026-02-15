@@ -1,0 +1,85 @@
+enum LaunchStatus {
+  ACTIVE
+  LAUNCHED
+  CANCELLED
+}
+
+enum SplitOption {
+  SPLIT_70_30
+  SPLIT_50_50
+  SPLIT_30_70
+}
+
+type Launch {
+  id: ID!
+  launchId: BigInt!
+  creator: String!
+  tankId: String!
+  name: String!
+  symbol: String!
+  splitOption: SplitOption!
+  tgeUnlockBps: BigInt!
+  vestingCliff: BigInt!
+  vestingDuration: BigInt!
+  status: LaunchStatus!
+  totalRaised: BigInt!
+  contributorCount: Int!
+  # Set after token launch
+  tokenAddress: String
+  tokensAllocated: BigInt
+  treasuryAmount: BigInt
+  # Metadata
+  createdAtBlock: Int!
+  createdAtTimestamp: Int!
+  launchedAtBlock: Int
+  launchedAtTimestamp: Int
+  txHash: String!
+}
+
+type Contribution {
+  id: ID!
+  launchId: BigInt!
+  contributor: String!
+  amount: BigInt!
+  blockNumber: Int!
+  timestamp: Int!
+  txHash: String!
+}
+
+type Claim {
+  id: ID!
+  launchId: BigInt!
+  user: String!
+  amount: BigInt!
+  blockNumber: Int!
+  timestamp: Int!
+  txHash: String!
+}
+
+type Refund {
+  id: ID!
+  launchId: BigInt!
+  user: String!
+  amount: BigInt!
+  blockNumber: Int!
+  timestamp: Int!
+  txHash: String!
+}
+
+type UserLaunchPosition {
+  id: ID!
+  launchId: BigInt!
+  user: String!
+  totalContributed: BigInt!
+  totalClaimed: BigInt!
+  totalRefunded: BigInt!
+}
+
+type GlobalStats {
+  id: ID!
+  totalLaunches: Int!
+  totalLaunched: Int!
+  totalCancelled: Int!
+  totalRaised: BigInt!
+  totalContributions: Int!
+}

@@ -1,0 +1,23 @@
+name: molttank-indexer
+description: MoltTank launchpad indexer for Monad
+networks:
+  - id: 143 # Monad Mainnet (Anvil fork)
+    rpc_config:
+      url: http://127.0.0.1:8545
+    start_block: 0
+    contracts:
+      - name: MoltTank
+        address:
+          - "0x3Bce4e6972523Bb04397eba7E58015E1dd3F21c0"
+        handler: src/EventHandlers.ts
+        events:
+          - event: TankCreated(uint256 indexed launchId, address indexed creator, string tankId, string name, string symbol, uint8 splitOption, uint256 tgeUnlockBps, uint256 vestingCliff, uint256 vestingDuration)
+          - event: Contributed(uint256 indexed launchId, address indexed contributor, uint256 amount)
+          - event: TokenLaunched(uint256 indexed launchId, address indexed token, string tankId, uint256 totalRaised, uint256 tokensAllocated, uint256 treasuryAmount)
+          - event: TokensClaimed(uint256 indexed launchId, address indexed user, uint256 amount)
+          - event: LaunchCancelled(uint256 indexed launchId)
+          - event: Refunded(uint256 indexed launchId, address indexed user, uint256 amount)
+
+field_selection:
+  transaction_fields:
+    - hash
