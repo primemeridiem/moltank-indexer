@@ -4,7 +4,7 @@ networks:
   - id: 10143 # Monad Testnet
     rpc_config:
       url: https://testnet-rpc.monad.xyz
-    start_block: 0
+    start_block: 13025509
     contracts:
       - name: MoltTank
         address:
